@@ -16,7 +16,7 @@ Audio Analysis:
   Vocals:
     Duration: 229.12 seconds
     Sample Rate: 44100 Hz
-    RMS Energy: 0.1247
+    RMS Energy: 0.1243
     Peak Amplitude: 0.9901
     Dynamic Range: 18.0 dB
     File Size: 38.55 MB
@@ -24,25 +24,25 @@ Audio Analysis:
   Drums:
     Duration: 229.12 seconds
     Sample Rate: 44100 Hz
-    RMS Energy: 0.0141
-    Peak Amplitude: 0.7820
-    Dynamic Range: 34.9 dB
+    RMS Energy: 0.0139
+    Peak Amplitude: 0.7832
+    Dynamic Range: 35.0 dB
     File Size: 38.55 MB
 
   Bass:
     Duration: 229.12 seconds
     Sample Rate: 44100 Hz
-    RMS Energy: 0.0044
-    Peak Amplitude: 0.1437
-    Dynamic Range: 30.4 dB
+    RMS Energy: 0.0035
+    Peak Amplitude: 0.0938
+    Dynamic Range: 28.7 dB
     File Size: 38.55 MB
 
   Other:
     Duration: 229.12 seconds
     Sample Rate: 44100 Hz
-    RMS Energy: 0.0206
-    Peak Amplitude: 0.6392
-    Dynamic Range: 29.8 dB
+    RMS Energy: 0.0212
+    Peak Amplitude: 0.6920
+    Dynamic Range: 30.3 dB
     File Size: 38.55 MB
 
 Model Information:

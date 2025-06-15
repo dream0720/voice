@@ -3,7 +3,7 @@ Voice Matching Analysis Report
 
 Analysis Information:
   Reference audio: lttgd_ref.wav
-  Candidates analyzed: 1
+  Candidates analyzed: 3
   Feature extraction: MFCC, Mel-spectrogram, Spectral, Temporal
 
 Best Match Results:
@@ -24,6 +24,8 @@ Detailed Feature Scores (Best Match):
 
 All Candidates Ranking:
   1. SPEAKER_01_fixed: 0.8966
+  2. SPEAKER_00_fixed: 0.7771
+  3. SPEAKER_02_fixed: 0.7684
 
 Feature Analysis Methodology:
   • MFCC (Mel-frequency Cepstral Coefficients): Voice timbre characteristics
