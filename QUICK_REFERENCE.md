@@ -25,8 +25,7 @@ python main.py
 ### GUI 模式
 
 ```bash
-python main.py                    # 标准界面
-python gui/modern_voice_app.py    # 现代化界面
+python run_modern_gui.py
 ```
 
 ### 命令行模式
