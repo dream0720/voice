@@ -1,0 +1,132 @@
+/* Modern Glassmorphism Theme */
+* {
+    font-family: 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    outline: none;
+}
+
+/* Main Window */
+QMainWindow {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                               stop:0 #f7fafc, stop:0.5 #edf2f7, stop:1 #e2e8f0);
+}
+
+/* Scroll Areas */
+QScrollArea {
+    border: none;
+    background: transparent;
+}
+
+QScrollBar:vertical {
+    background: rgba(255, 255, 255, 0.3);
+    width: 8px;
+    border-radius: 4px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: rgba(102, 126, 234, 0.6);
+    border-radius: 4px;
+    min-height: 20px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: rgba(102, 126, 234, 0.8);
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+    background: none;
+}
+
+/* Tooltips */
+QToolTip {
+    background: rgba(45, 55, 72, 0.95);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Menu Styling */
+QMenu {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 12px;
+    padding: 8px;
+    backdrop-filter: blur(20px);
+}
+
+QMenu::item {
+    background: transparent;
+    color: #2d3748;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin: 2px;
+}
+
+QMenu::item:selected {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                               stop:0 #667eea, stop:1 #764ba2);
+    color: white;
+}
+
+/* Context Menu */
+QWidget::menu-indicator {
+    width: 0;
+    height: 0;
+}
+
+/* Focus Styles */
+QWidget:focus {
+    outline: 2px solid rgba(102, 126, 234, 0.5);
+    outline-radius: 8px;
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-up {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Custom Properties for Dynamic Theming */
+:root {
+    --primary-color: #667eea;
+    --primary-dark: #5a67d8;
+    --success-color: #48bb78;
+    --warning-color: #ed8936;
+    --danger-color: #f56565;
+    --text-color: #2d3748;
+    --text-muted: #718096;
+    --background-light: #f7fafc;
+    --background-card: rgba(255, 255, 255, 0.8);
+    --border-color: rgba(226, 232, 240, 0.6);
+}
+
+/* Responsive Design Helpers */
+@media (max-width: 1400px) {
+    QWidget {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1200px) {
+    QWidget {
+        font-size: 12px;
+    }
+}

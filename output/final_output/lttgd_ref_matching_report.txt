@@ -1,0 +1,40 @@
+Voice Matching Analysis Report
+==================================================
+
+Analysis Information:
+  Reference audio: lttgd_ref.wav
+  Candidates analyzed: 1
+  Feature extraction: MFCC, Mel-spectrogram, Spectral, Temporal
+
+Best Match Results:
+  Best candidate: SPEAKER_01_fixed
+  Composite score: 0.8966
+
+Detailed Feature Scores (Best Match):
+  Mel Similarity: 0.9967
+  Mfcc Similarity: 0.9858
+  F0 Similarity: 0.9802
+  Rms Energy Similarity: 0.8550
+  Spectral Avg Similarity: 0.7874
+  Spectral Centroid Similarity: 0.7825
+  Spectral Rolloff Similarity: 0.7570
+  Spectral Bandwidth Similarity: 0.7550
+  Voiced Similarity: 0.7237
+  Tempo Similarity: 0.6842
+
+All Candidates Ranking:
+  1. SPEAKER_01_fixed: 0.8966
+
+Feature Analysis Methodology:
+  • MFCC (Mel-frequency Cepstral Coefficients): Voice timbre characteristics
+  • Mel-spectrogram: Frequency distribution analysis
+  • Spectral features: Voice quality metrics (centroid, rolloff, bandwidth)
+  • F0 (Fundamental frequency): Pitch characteristics
+  • Temporal features: Rhythm and timing patterns
+  • Composite scoring: Weighted combination of all features
+
+Similarity Calculation:
+  • Cosine similarity for MFCC and Mel features
+  • Normalized difference for spectral features
+  • Ratio-based similarity for pitch and tempo
+  • Weighted average for composite score

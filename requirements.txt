@@ -1,0 +1,71 @@
+# Voice Processing Suite - Complete Audio Analysis System
+# Advanced voice processing pipeline with modern GUI interface
+
+# ================================
+# Core GUI Framework
+# ================================
+PyQt6>=6.5.0
+
+# ================================
+# Audio Processing & Analysis
+# ================================
+librosa>=0.10.0
+soundfile>=0.12.0
+pyannote.audio>=3.1.0
+
+# ================================
+# Scientific Computing
+# ================================
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+
+# ================================
+# Machine Learning
+# ================================
+scikit-learn>=1.3.0
+torch==2.2.2+cu121
+torchaudio==2.2.2+cu121
+
+# ================================
+# Data Visualization
+# ================================
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# ================================
+# Source Separation
+# ================================
+demucs>=4.0.0
+
+# ================================
+# Speaker Processing
+# ================================
+speechbrain>=0.5.0
+
+# ================================
+# Utilities
+# ================================
+pathlib
+argparse
+datetime
+typing
+
+# ================================
+# Development & Authentication
+# ================================
+huggingface_hub>=0.16.0
+
+# ================================
+# Optional Dependencies
+# ================================
+# PyQt6-WebEngine  # For enhanced web features
+# qt-material>=2.14  # For material design themes
+
+# 音频编解码支持
+# ffmpeg-python>=0.2.0
+
+# 开发工具（可选）
+# pytest>=7.4.0
+# black>=23.7.0
+# flake8>=6.0.0

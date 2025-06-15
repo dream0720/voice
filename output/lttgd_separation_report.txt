@@ -1,0 +1,52 @@
+Demucs Source Separation Report
+==================================================
+
+Separation Information:
+  Input file: lttgd.wav
+  Model used: htdemucs
+  Stems separated: 4
+
+Separated Files:
+  Vocals: vocals.wav
+  Drums: drums.wav
+  Bass: bass.wav
+  Other: other.wav
+
+Audio Analysis:
+  Vocals:
+    Duration: 229.12 seconds
+    Sample Rate: 44100 Hz
+    RMS Energy: 0.1247
+    Peak Amplitude: 0.9901
+    Dynamic Range: 18.0 dB
+    File Size: 38.55 MB
+
+  Drums:
+    Duration: 229.12 seconds
+    Sample Rate: 44100 Hz
+    RMS Energy: 0.0141
+    Peak Amplitude: 0.7820
+    Dynamic Range: 34.9 dB
+    File Size: 38.55 MB
+
+  Bass:
+    Duration: 229.12 seconds
+    Sample Rate: 44100 Hz
+    RMS Energy: 0.0044
+    Peak Amplitude: 0.1437
+    Dynamic Range: 30.4 dB
+    File Size: 38.55 MB
+
+  Other:
+    Duration: 229.12 seconds
+    Sample Rate: 44100 Hz
+    RMS Energy: 0.0206
+    Peak Amplitude: 0.6392
+    Dynamic Range: 29.8 dB
+    File Size: 38.55 MB
+
+Model Information:
+  Demucs Model: htdemucs
+  Technology: Hybrid Transformer Demucs (HTDemucs)
+  Architecture: U-Net with transformer layers
+  Training: Large-scale music dataset

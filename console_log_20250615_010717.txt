@@ -1,0 +1,172 @@
+🚀 Voice Processing Suite 初始化成功！
+📋 功能模块：
+   1. 🎛️ 音频预处理 - 噪声消除和信号增强
+   2. 🎼 音源分离 - 分离音乐和人声
+   3. 👥 说话人分离 - 多说话人识别分离
+   4. 🎯 人声匹配 - 基于参考音频的人声匹配
+============================================================
+✅ 已为🎛️ 音频预处理选择文件: lttgd.wav
+🎵 Starting Audio Preprocessing Pipeline
+============================================================
+ERROR: C:\Users\zzy\miniconda3\envs\voice\Lib\inspect.py:1007: UserWarning: Module 'speechbrain.pretrained' was deprecated, redirecting to 'speechbrain.inference'. Please update your script. This is a change from SpeechBrain 1.0. See: https://github.com/speechbrain/speechbrain/releases/tag/v1.0.0
+  if ismodule(module) and hasattr(module, '__file__'):
+📁 Loaded audio: lttgd.wav
+   Sample rate: 16000 Hz
+   Duration: 229.12 seconds
+   Samples: 3665974
+
+🔍 Original Audio Analysis
+--------------------------------------------------
+   Mean frequency: 2004.48 Hz
+   Dominant frequency: 147.88 Hz
+   Energy distribution:
+     Low freq (0-1kHz): 88.9%
+     Mid freq (1-4kHz): 8.2%
+     High freq (4kHz+): 2.9%
+🔧 Designed bandpass filter:
+   Frequency range: 80.0-7000.0 Hz
+   Normalized range: 0.010-0.875
+   Filter order: 5
+✅ Applied bandpass filter (80-7000 Hz)
+
+🧹 Applying spectral subtraction denoising
+   Alpha (over-subtraction): 1.5
+   Beta (spectral floor): 0.1
+✅ Spectral subtraction completed
+
+🔍 Processed Audio Analysis
+--------------------------------------------------
+   Mean frequency: 1835.39 Hz
+   Dominant frequency: 147.88 Hz
+   Energy distribution:
+     Low freq (0-1kHz): 89.8%
+     Mid freq (1-4kHz): 7.7%
+     High freq (4kHz+): 2.4%
+💾 Saved processed audio to: output/preprocessing\lttgd_preprocessed.wav
+📊 Visualization saved to: output/preprocessing\lttgd_analysis.png
+📄 Processing report saved to: output/preprocessing\lttgd_report.txt
+✅ Audio preprocessing pipeline completed successfully!
+============================================================
+✅ 音频预处理完成成功！
+📁 输出文件: output/preprocessing\lttgd_preprocessed.wav
+📂 已打开输出文件夹: output/preprocessing
+✅ 已为🎼 音源分离选择文件: lttgd.wav
+🎵 Starting Demucs Source Separation
+==================================================
+📁 Input file: lttgd.wav
+📂 Output directory: output/demucs_output
+🤖 Model: htdemucs
+💻 Device: cpu
+🎼 Stems: all (vocals, drums, bass, other)
+
+🔄 Running Demucs separation...
+Command: python -m demucs --name htdemucs --out output/demucs_output --device cpu C:/Users/zzy/Desktop/Courses/xinhaoyuxitong/voice_processing/input/lttgd.wav
+✅ Demucs separation completed successfully!
+  📄 Vocals: output/demucs_output\htdemucs\lttgd\vocals.wav
+  📄 Drums: output/demucs_output\htdemucs\lttgd\drums.wav
+  📄 Bass: output/demucs_output\htdemucs\lttgd\bass.wav
+  📄 Other: output/demucs_output\htdemucs\lttgd\other.wav
+
+🔍 Analyzing separated audio files...
+  Vocals:
+    Duration: 229.12s
+    RMS Energy: 0.1238
+    Peak: 0.9901
+    Dynamic Range: 18.1 dB
+  Drums:
+    Duration: 229.12s
+    RMS Energy: 0.0140
+    Peak: 0.7887
+    Dynamic Range: 35.0 dB
+  Bass:
+    Duration: 229.12s
+    RMS Energy: 0.0032
+    Peak: 0.1067
+    Dynamic Range: 30.4 dB
+  Other:
+    Duration: 229.12s
+    RMS Energy: 0.0212
+    Peak: 0.6735
+    Dynamic Range: 30.0 dB
+📄 Separation report saved to: output/demucs_output\lttgd_separation_report.txt
+✅ 音源分离完成成功！
+📁 分离的音轨: vocals, drums, bass, other
+✅ 已为👥 说话人分离选择文件: vocals.wav
+🎵 Starting Pyannote Speaker Separation
+==================================================
+✅ Hugging Face authentication successful
+🤖 Loading Pyannote speech separation pipeline...
+ERROR: C:\Users\zzy\miniconda3\envs\voice\Lib\site-packages\speechbrain\utils\parameter_transfer.py:234: UserWarning: Requested Pretrainer collection using symlinks on Windows. This might not work; see `LocalStrategy` documentation. Consider unsetting `collect_in` in Pretrainer to avoid symlinking altogether.
+  warnings.warn(
+✅ Pyannote pipeline loaded successfully on cuda
+📁 Input file: vocals.wav
+📂 Output directory: output/speaker_output
+🔄 Loading audio file...
+   Sample rate: 44100 Hz
+   Duration: 229.12 seconds
+   Channels: 2
+🔄 Running speaker separation...
+ERROR: C:\Users\zzy\miniconda3\envs\voice\Lib\site-packages\pyannote\audio\utils\reproducibility.py:74: ReproducibilityWarning: TensorFloat-32 (TF32) has been disabled as it might lead to reproducibility issues and lower accuracy.
+It can be re-enabled by calling
+   >>> import torch
+   >>> torch.backends.cuda.matmul.allow_tf32 = True
+   >>> torch.backends.cudnn.allow_tf32 = True
+See https://github.com/pyannote/pyannote-audio/issues/1370 for more details.
+
+  warnings.warn(
+ERROR: C:\Users\zzy\miniconda3\envs\voice\Lib\site-packages\torch\nn\functional.py:5476: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at ..\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:263.)
+  attn_output = scaled_dot_product_attention(q, k, v, attn_mask, dropout_p, is_causal)
+segmentation         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:39
+separations          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+speaker_counting     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+embeddings           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:12
+discrete_diarization ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+📄 Diarization saved to: output/speaker_output\vocals_diarization.rttm
+👥 Found 2 speakers: ['SPEAKER_00', 'SPEAKER_01']
+  💾 SPEAKER_00: output/speaker_output\vocals_SPEAKER_00.wav
+  💾 SPEAKER_01: output/speaker_output\vocals_SPEAKER_01.wav
+
+🔍 Analyzing separated speaker files...
+  SPEAKER_00:
+    Duration: 229.50s
+    RMS Energy: 0.4685
+    Peak: 1.0000
+  SPEAKER_01:
+    Duration: 229.50s
+    RMS Energy: 0.2547
+    Peak: 1.0000
+📄 Speaker separation report saved to: output/speaker_output\vocals_speaker_report.txt
+✅ Pyannote speaker separation completed successfully!
+✅ 说话人分离完成成功！
+👥 发现的说话人: SPEAKER_00, SPEAKER_01
+📂 已打开输出文件夹: output/speaker_output
+✅ 已选择参考音频: SPEAKER_01_fixed.wav
+✅ 已选择参考音频: SPEAKER_01_fixed.wav
+✅ 已选择参考音频: lttgd_ref.wav
+✅ 已选择1个待匹配音频文件
+🎯 人声匹配准备就绪，可以开始处理！
+✅ 已选择1个待匹配音频文件
+🎯 人声匹配准备就绪，可以开始处理！
+🎵 Starting Voice Matching Analysis
+============================================================
+📁 Loading reference audio...
+📁 Loaded: lttgd_ref.wav (12.76s)
+🔍 Analyzing reference audio features...
+  🔍 Extracting comprehensive features...
+    ✅ Extracted 23 feature types
+
+👥 Analyzing 1 candidate audio files...
+
+[1/1] Processing: SPEAKER_01_fixed
+📁 Loaded: SPEAKER_01_fixed.wav (229.50s)
+  🔍 Extracting comprehensive features...
+    ✅ Extracted 23 feature types
+❌ 处理错误: Processing error: unsupported format string passed to numpy.ndarray.__format__
+Traceback (most recent call last):
+  File "C:\Users\zzy\Desktop\Courses\xinhaoyuxitong\voice_processing\gui\voice_processing_app.py", line 107, in run
+    self.result = self.func(*self.args, **self.kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zzy\Desktop\Courses\xinhaoyuxitong\voice_processing\modules\voice_matching\voice_matcher.py", line 416, in match_voices
+    print(f"    📊 Composite similarity score: {composite_score:.3f}")
+                                               ^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported format string passed to numpy.ndarray.__format__

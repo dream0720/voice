@@ -1,0 +1,179 @@
+/* Modern Voice Processing Suite Styles */
+
+/* General Styling */
+* {
+    font-family: 'SF Pro Display', 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    outline: none;
+}
+
+/* Main Window Background */
+QMainWindow {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                               stop:0 #667eea, stop:0.3 #764ba2, 
+                               stop:0.7 #f093fb, stop:1 #f5576c);
+}
+
+/* Glassmorphism Cards */
+.processing-card {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+
+}
+
+.processing-card:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-4px);
+
+}
+
+/* Modern Buttons */
+.btn-primary {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                               stop:0 #667eea, stop:1 #764ba2);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.btn-primary:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                               stop:0 #5a67d8, stop:1 #6b46c1);
+    transform: translateY(-2px);
+
+}
+
+.btn-secondary {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                               stop:0 #f093fb, stop:1 #f5576c);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+}
+
+.btn-secondary:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                               stop:0 #e879f9, stop:1 #ef4444);
+}
+
+/* Console Styling */
+.console {
+    background: rgba(26, 32, 44, 0.95);
+    color: #68d391;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    border: none;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+/* Group Boxes */
+QGroupBox {
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    margin-top: 16px;
+    padding-top: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    font-weight: 700;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 20px;
+    padding: 4px 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Progress Bars */
+QProgressBar {
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: 600;
+    height: 20px;
+}
+
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                               stop:0 #667eea, stop:1 #764ba2);
+    border-radius: 8px;
+}
+
+/* Scroll Bars */
+QScrollBar:vertical {
+    background: rgba(255, 255, 255, 0.1);
+    width: 12px;
+    border-radius: 6px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    min-height: 20px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+    background: none;
+}
+
+/* Text Edits */
+QTextEdit {
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    color: white;
+    padding: 16px;
+    selection-background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Labels */
+QLabel {
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Hover Effects */
+.hover-lift:hover {
+    transform: translateY(-4px);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hover-glow:hover {
+
+    transition: all 0.3s ease;
+}

@@ -1,0 +1,21 @@
+🎵 人声增强与主人声提取系统 - 处理报告
+==================================================
+
+输入文件: C:\Users\zzy\Desktop\Courses\xinhaoyuxitong\voice_processing\test_audio\test_mixed.wav
+输出文件: C:\Users\zzy\Desktop\Courses\xinhaoyuxitong\voice_processing\output\enhanced_voice_output.wav
+处理时间: 2025-06-10 20:39:33
+
+📊 处理效果分析:
+• 主人声匹配置信度: 0.300
+• 能量变化: 1.19 dB
+• 频谱质心变化: 10.2%
+• 频谱宽度变化: -67.2%
+• 原始频谱质心: 484 Hz
+• 处理后频谱质心: 534 Hz
+
+🎯 信号与系统知识点体现:
+• LTI系统: 带通滤波器设计与应用
+• 频域分析: FFT频谱分析
+• 卷积运算: 滤波器实现
+• 冲激响应: 系统特性分析
+• 音频信号处理: MFCC特征提取

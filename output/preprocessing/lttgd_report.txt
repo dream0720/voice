@@ -1,0 +1,38 @@
+Audio Preprocessing Report
+==================================================
+
+Input Information:
+  Input file: lttgd.wav
+  Output file: lttgd_preprocessed.wav
+  Sample rate: 16000 Hz
+
+Processing Steps Applied:
+  1. Light Bandpass Filter (100-8000 Hz)
+
+Original Audio Analysis:
+  Mean frequency: 2004.48 Hz
+  Dominant frequency: 147.88 Hz
+  Energy distribution:
+    Low freq (0-1kHz): 88.9%
+    Mid freq (1-4kHz): 8.2%
+    High freq (4kHz+): 2.9%
+
+Processed Audio Analysis:
+  Mean frequency: 2028.62 Hz
+  Dominant frequency: 147.88 Hz
+  Energy distribution:
+    Low freq (0-1kHz): 88.5%
+    Mid freq (1-4kHz): 8.5%
+    High freq (4kHz+): 3.0%
+
+Processing Effects:
+  Low frequency energy change: -0.4%
+  Mid frequency energy change: +0.3%
+  High frequency energy change: +0.0%
+
+Signal Processing Theory Applied:
+  1. Fast Fourier Transform (FFT) for frequency domain analysis
+  2. Butterworth bandpass filter design
+  3. Spectral subtraction for noise reduction
+  4. Short-Time Fourier Transform (STFT) for time-frequency analysis
+  5. Wiener filtering for optimal noise suppression
